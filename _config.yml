@@ -2,20 +2,20 @@
 #  SITE SETTINGS — edit these first
 # ---------------------------------------------------------------
 
-title: "Your Name"                      # shown in the browser tab
-description: "Behavioral ecologist and biology education researcher"
+title: "Aarcha Thadi"                      # shown in the browser tab
+description: "Biology Education & Behavioral Ecology Research"
 
 author:
-  name: "Your Name"
-  pronouns: ""                          # e.g. "she/her" — leave "" to hide
-  position: "Postdoctoral Researcher"
-  department: "Department of Biology"
-  institution: "University Name"
-  email: "you@university.edu"
+  name: "Aarcha Thadi"
+  pronouns: "she/her"                          # e.g. "she/her" — leave "" to hide
+  position: "Postdoctoral Researcher, Costello Lab"
+  department: "Department of Biological Sciences"
+  institution: "University at Buffalo"
+  email: "athadi@buffalo.edu"
   photo: "/assets/img/profile.svg"      # replace with /assets/img/profile.jpg
   # The exact way your name appears in author lists.
   # Every occurrence gets bolded on the Publications page.
-  pub_name: "Name, Y."
+  pub_name: "Thadi, A."
 
 # Links in the footer and on the Contact page. Leave any of them "" to hide it.
 links:
