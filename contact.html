@@ -1,0 +1,20 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+
+<p class="lede">I'm happy to hear from students, potential collaborators, and anyone interested in my research.</p>
+
+<ul class="contact-list">
+  <li><span class="label">Email</span><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+  <li><span class="label">Department</span><span>{{ site.author.department }}<br>{{ site.author.institution }}</span></li>
+  <!-- EDIT: office address, or delete this line -->
+  <li><span class="label">Office</span><span>Building, Room 000</span></li>
+  {% if site.links.google_scholar != "" %}<li><span class="label">Google Scholar</span><a href="{{ site.links.google_scholar }}">Profile</a></li>{% endif %}
+  {% if site.links.orcid != "" %}<li><span class="label">ORCID</span><a href="{{ site.links.orcid }}">{{ site.links.orcid | remove: "https://orcid.org/" }}</a></li>{% endif %}
+  {% if site.links.researchgate != "" %}<li><span class="label">ResearchGate</span><a href="{{ site.links.researchgate }}">Profile</a></li>{% endif %}
+  {% if site.links.github != "" %}<li><span class="label">GitHub</span><a href="{{ site.links.github }}">{{ site.links.github | remove: "https://github.com/" }}</a></li>{% endif %}
+  {% if site.links.bluesky != "" %}<li><span class="label">Bluesky</span><a href="{{ site.links.bluesky }}">Profile</a></li>{% endif %}
+  {% if site.links.linkedin != "" %}<li><span class="label">LinkedIn</span><a href="{{ site.links.linkedin }}">Profile</a></li>{% endif %}
+</ul>

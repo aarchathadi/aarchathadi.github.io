@@ -1,0 +1,44 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+---
+
+<!-- Publications are listed in _data/publications.yml — edit that file, not this one. -->
+
+{% if site.links.google_scholar != "" %}
+<p class="lede">For a complete and up-to-date list, see my <a href="{{ site.links.google_scholar }}">Google Scholar profile</a>.</p>
+{% endif %}
+
+{% assign me = site.author.pub_name %}
+{% assign me_bold = '<strong>' | append: me | append: '</strong>' %}
+
+{% assign sections = "Peer-reviewed articles|Preprints & in review|Other publications" | split: "|" %}
+{% assign keys = "article|preprint|other" | split: "|" %}
+
+{% for key in keys %}
+  {% assign pubs = site.data.publications | where: "type", key %}
+  {% if pubs.size > 0 %}
+  <h2>{{ sections[forloop.index0] }}</h2>
+  <ul class="pub-list">
+    {% for p in pubs %}
+    <li class="pub">
+      <div class="pub-title">{{ p.title }}</div>
+      <div class="pub-authors">{{ p.authors | replace: me, me_bold }}</div>
+      <div class="pub-venue">{% if p.venue %}<em>{{ p.venue }}</em>{% endif %}{% if p.details %}, {{ p.details }}{% endif %}{% if p.year %} ({{ p.year }}){% endif %}</div>
+      {% if p.note %}<div class="pub-note">{{ p.note }}</div>{% endif %}
+      {% if p.doi or p.pdf or p.preprint or p.data or p.code or p.area %}
+      <div class="pub-links">
+        {% if p.doi %}<a href="https://doi.org/{{ p.doi }}">DOI</a>{% endif %}
+        {% if p.pdf %}<a href="{{ p.pdf | relative_url }}">PDF</a>{% endif %}
+        {% if p.preprint %}<a href="{{ p.preprint }}">Preprint</a>{% endif %}
+        {% if p.data %}<a href="{{ p.data }}">Data</a>{% endif %}
+        {% if p.code %}<a href="{{ p.code }}">Code</a>{% endif %}
+        {% if p.area %}<span class="tag">{{ p.area }}</span>{% endif %}
+      </div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endfor %}

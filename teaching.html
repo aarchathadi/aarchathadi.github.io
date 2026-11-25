@@ -1,0 +1,33 @@
+---
+layout: default
+title: Teaching
+permalink: /teaching/
+---
+
+<!-- EDIT: your teaching philosophy in a few sentences. Courses live in _data/teaching.yml. -->
+<p class="lede">I approach teaching the way I approach research: with evidence. My courses use active learning,
+authentic data, and frequent low-stakes practice so that every student can engage in the work of science.</p>
+
+{% assign roles = "Instructor of record|Teaching assistant|Guest lectures & workshops" | split: "|" %}
+{% assign keys = "instructor|ta|guest" | split: "|" %}
+
+{% for key in keys %}
+  {% assign courses = site.data.teaching | where: "role", key %}
+  {% if courses.size > 0 %}
+  <h2>{{ roles[forloop.index0] }}</h2>
+  {% for c in courses %}
+  <div class="course">
+    <div class="course-head">
+      <span class="course-name">{% if c.code %}{{ c.code }}: {% endif %}{{ c.title }}</span>
+      <span class="course-meta">{{ c.institution }} · {{ c.terms }}</span>
+    </div>
+    {% if c.description %}<p>{{ c.description }}</p>{% endif %}
+  </div>
+  {% endfor %}
+  {% endif %}
+{% endfor %}
+
+<h2>Mentoring</h2>
+<!-- EDIT or delete -->
+<p>I have mentored undergraduate researchers on projects in behavioral ecology and biology education.
+Students interested in research opportunities are welcome to <a href="{{ '/contact/' | relative_url }}">get in touch</a>.</p>

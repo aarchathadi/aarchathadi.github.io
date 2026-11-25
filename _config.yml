@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------
+#  SITE SETTINGS — edit these first
+# ---------------------------------------------------------------
+
+title: "Your Name"                      # shown in the browser tab
+description: "Behavioral ecologist and biology education researcher"
+
+author:
+  name: "Your Name"
+  pronouns: ""                          # e.g. "she/her" — leave "" to hide
+  position: "Postdoctoral Researcher"
+  department: "Department of Biology"
+  institution: "University Name"
+  email: "you@university.edu"
+  photo: "/assets/img/profile.svg"      # replace with /assets/img/profile.jpg
+  # The exact way your name appears in author lists.
+  # Every occurrence gets bolded on the Publications page.
+  pub_name: "Name, Y."
+
+# Links in the footer and on the Contact page. Leave any of them "" to hide it.
+links:
+  google_scholar: ""                    # https://scholar.google.com/citations?user=XXXX
+  orcid: ""                             # https://orcid.org/0000-0000-0000-0000
+  researchgate: ""
+  github: ""
+  bluesky: ""                           # https://bsky.app/profile/you.bsky.social
+  linkedin: ""
+
+# Top navigation, in order
+nav:
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: Teaching
+    url: /teaching/
+  - title: CV
+    url: /cv/
+  - title: Contact
+    url: /contact/
+
+# ---------------------------------------------------------------
+#  Leave these alone unless you know you need to change them
+# ---------------------------------------------------------------
+baseurl: ""          # keep "" when the repository is named <username>.github.io
+url: ""              # e.g. https://yourname.github.io  (optional)
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

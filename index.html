@@ -1,0 +1,32 @@
+---
+layout: default
+title: Home
+---
+
+<section class="intro">
+  <img src="{{ site.author.photo | relative_url }}" alt="Photo of {{ site.author.name }}">
+  <div>
+    <h1>{{ site.author.name }}{% if site.author.pronouns != "" %} <span class="role" style="font-family:Inter,sans-serif;font-size:1rem;font-weight:400">({{ site.author.pronouns }})</span>{% endif %}</h1>
+    <p class="role">{{ site.author.position }}<br>{{ site.author.department }}, {{ site.author.institution }}</p>
+
+    <!-- EDIT: your short bio, 2–4 sentences -->
+    <p>I am a biologist working at the intersection of behavioral ecology and biology education research.
+    My PhD research examined how animals make decisions in variable environments. As a postdoc, I now study
+    how undergraduates learn to think like biologists, with a focus on how students reason about
+    evolution, behavior, and data.</p>
+
+    <div class="chips">
+      <span class="chip">Behavioral ecology</span>
+      <span class="chip">Biology education research</span>
+      <span class="chip">Undergraduate learning</span>
+      <span class="chip">Evolution</span>
+    </div>
+  </div>
+</section>
+
+<h2>News</h2>
+<ul class="news">
+  {% for item in site.data.news limit: 6 %}
+  <li><span class="date">{{ item.date }}</span><span>{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</span></li>
+  {% endfor %}
+</ul>
